@@ -1,0 +1,587 @@
+body{
+  font-family: $font-family-en;
+}
+
+p{
+  font-size: $font-size-1;
+  line-height: 24px;
+}
+
+.container{
+  max-width: 1140px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin: 0 auto;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  .logo{
+    margin-top: 9px;
+    margin-bottom: 9px;
+    a{
+      display: block;
+      width: 128px;
+      height: 38px;
+      background: url('../img/d’Perfume.png');
+      @include hide-text;
+    }
+  }
+  .menu{
+    display: flex;
+    justify-content: space-between;
+    @include pad{
+      // display: none;
+    }
+    li{
+      a{
+        display: block;
+        padding-left: 16px;
+        padding-right: 16px;
+        line-height: 56px;
+        font-size: $font-size-2;
+        color: $text-color-base;
+        &:hover{
+          color: $primary-color;
+        }
+        i{
+          margin-right: 3px;
+        }
+      }
+    }
+    .menu-padNone{
+      @include pad{
+        display: none;
+      }
+    }
+    .menu-padShow{
+      margin-right: 40px;
+      position: relative;
+      @include pad{
+        display: block;
+      }
+      em{
+        display: none;
+        @include pad{
+          display: block;
+          position: absolute;
+          top: 12px;
+          right: 5px;
+          padding: 0 7px;
+          background: $primary-color;
+          border-radius: 100%;
+          color: #fff;
+          font-size: 12px;
+          line-height: 13px;
+        }
+        
+      }
+      span{
+        @include pad{
+          display: none;
+        }
+        
+      }
+    }
+  }
+  .mobile-menu{
+    display: none;
+    @include pad{
+      position: absolute;
+      left: 0;
+      top: 100%;
+      width: 100%;
+      max-height: 0px;
+      transition: all 0.8s;
+      overflow: hidden;
+      z-index: 120;
+      display: flex;
+      flex-direction: column;
+    }
+    &.active {
+      max-height: 285px;
+    }
+    li{
+      text-align: center;
+      a{
+        background: $mobile-color-menu;
+        color: #FFFFFF;
+        border-top: 1px solid #FFFFFF;
+        text-decoration: none;
+        display: block;
+        padding-left: 16px;
+        padding-right: 16px;
+        line-height: 56px;
+        font-size: $font-size-2;
+        &:hover{
+          color: #fff;
+          background: $primary-color;
+        }
+      }
+    }
+  }
+  .ham-icon{
+    position: absolute;
+    padding-left: 15px;
+    padding-right: 15px;
+    line-height: 56px;
+    right: 0;
+    color: $mobile-color-menu;
+    font-size: $font-size-5;
+    display: none;
+    @include pad{
+      display: block;
+    }
+  }
+}
+
+.banner{
+  height: calc(100vh - 56px);
+  background: url('../img/index1.jpg') 50% 50%;
+  background-size: cover;
+  @include mobile{
+    background: url('../img/index1.jpg') 12% 50%;
+    background-size: cover;
+  }
+  .container{
+    display: flex;
+    justify-content: flex-end;
+    @include pad{
+      justify-content: center;
+    }
+  }
+  .bannerText{
+    color: #fff;
+    margin-top: 18em;
+    text-align: left;
+    @include mobile{
+      margin-top: 14em;
+    }
+  }
+  h2{
+    font-size: $font-size-7;
+    line-height: 60px;
+    font-weight: $font-weight-title;
+  }
+  p{
+    font-size: $font-size-3;
+    line-height: 36px;
+    margin-bottom: 16px;
+    width: 445px;
+    @include mobile{
+      width: 100%;
+    }
+  }
+  a{
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    display: block;
+    width: 350px;
+    text-align: center;
+    line-height: 56px;
+    font-size: $font-size-4;
+    &:hover{
+      background-color: #FFFFFF4D;
+    }
+  }
+}
+
+.main{
+  padding-top: 60px;
+  padding-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  @include mobile{
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  section{
+    display: flex;
+    @include PC{
+      margin-bottom: 32px;
+    }
+    @include mobile{
+      flex-direction: column;
+    }
+    .articleImg1{
+      height: 555px;
+      width: 555px;
+      background: url('../img/index2.jpg') 50% 20%;
+      background-size: cover;
+      @include mobile{
+        width: 100%;
+        height: 350px;
+      }
+    }
+    .articleImg2{
+      height: 555px;
+      width: 555px;
+      background: url('../img/index3.png') center center;
+      background-size: cover;
+      @include mobile{
+        width: 100%;
+        height: 350px;
+      }
+    }
+    .articleImg3{
+      height: 555px;
+      width: 555px;
+      background: url('../img/index4.jpg') 25% 50%;
+      background-size: cover;
+      @include mobile{
+        width: 100%;
+        height: 350px;
+      }
+    }
+    .articleImg4{
+      height: 1080px;
+      width: 555px;
+      background: url('../img/index5.jpg') center center;
+      background-size: cover;
+      @include mobile{
+        width: 100%;
+        height: 680px;
+      }
+    }
+    .articleImg5{
+      height: 520px;
+      width: 730px;
+      background: url('../img/index9.jpg') center center;
+      background-size: cover;
+      @include mobile{
+        width: 100%;
+      }
+    }
+    article{
+      width: 350px;
+      margin: 0 auto;
+      padding-left: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      @include mobile{
+        width: 100%;
+        padding-left:0;
+      }
+      h3{
+        font-size: $font-size-5;
+        line-height: 48px;
+        font-weight: $font-weight-title;
+      }
+      p{
+        font-size: $font-size-2;
+        line-height: 30px;
+        font-weight: $font-weight-article;
+        margin-bottom: 16px;
+        font-family: $font-family-ch;
+        @include mobile{
+          margin-bottom: 8px;
+        }
+      }
+      a{
+        color: $link-color;
+        line-height: 24px;
+        font-weight: $font-weight-subtitle;
+        font-family: $font-family-ch;
+        &:hover{
+          color: $link-hover-color;
+        }
+      }
+      .plan{
+        margin-top: 92px;
+        @include pad{
+          margin-top: 8px;
+        }
+        li{
+          margin-bottom: 52px;
+          @include pad{
+            margin-bottom: 20px;
+          }
+          h4{
+            font-size: $font-size-3;
+            line-height: 36px;
+            font-weight: $font-weight-subtitle;
+          }
+          p{
+            font-weight: $font-weight-article;
+            font-family: $font-family-en;
+            font-size: $font-size-1;
+            line-height: 24px;
+          }
+        }
+        .planBtn{
+          margin-top: 60px;
+          @include pad{
+            margin-top: 0;
+            margin-bottom: 0;
+          }
+          a{
+            color:#000;
+            font-size: $font-size-2;
+            line-height: 60px;
+            text-align: center;
+            display: block;
+            border: 2px solid #000000;
+            border-radius: 30px;
+            @include pad{
+              font-size: $font-size-1;
+            }
+            &:hover{
+              background-color: #0000000D;
+            }
+          }
+        }
+      }
+    }
+    .bottomArticle{
+      margin-left: 30px;
+      @include mobile{
+        margin-left: 0;
+      }
+      p{
+        font-size: $font-size-1;
+        line-height: 24px;
+      }
+      .subtitle{
+        font-size: $font-size-2;
+        line-height: 30px;
+      }
+    }
+  }
+  
+  .reverse{
+    flex-direction: row-reverse;
+    @include mobile{
+      flex-direction: column;
+    }
+    article{
+      padding-right: 15px;
+      padding-left: 0;
+      @include mobile{
+        padding: 0;
+      }
+    }
+  }
+  .planItem{
+    @include mobile{
+      margin-bottom: 0;
+    }
+  }
+  .lastArticle{
+    margin-bottom: 0;
+  }
+}
+
+.product{
+  background-color: $text-color-background;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  @include pad{
+    padding-bottom: 0px;
+  }
+  ul{
+    display: flex;
+    justify-content: space-between;
+    @include pad{
+      flex-wrap: wrap;
+    }
+    li {
+      width: 350px;
+      @include PC{
+        width: 250px;
+      }
+      @include pad{
+        width: 100%;
+        margin-bottom: 32px;
+      }
+      .product-item1{
+        display: block;
+        height: 540px;
+        background: url(../img/index6.jpg) 50% 50%;
+        background-size: cover;
+        margin-bottom: 8px;
+        @include PC{
+          height: 400px;
+          background: url(../img/index6.jpg) 50% 100%;
+          background-size: cover;
+        }
+        @include pad{
+          height: 800px;
+          background: url(../img/index6.jpg) 50% 100%;
+          background-size: cover;
+        }
+        @include mobile{
+          height: 350px;
+          background: url(../img/index6.jpg) 50% 90%;
+          background-size: cover;
+        }
+      }
+      .product-item2{
+        display: block;
+        height: 540px;
+        background: url(../img/index7.jpg) 50% 50%;
+        background-size: cover;
+        margin-bottom: 8px;
+        @include PC{
+          height: 400px;
+        }
+        @include pad{
+          height: 800px;
+        }
+        @include mobile{
+          height: 350px;
+          background: url(../img/index7.jpg) 50% 60%;
+          background-size: cover;
+        }
+      }
+      .product-item3{
+        display: block;
+        height: 540px;
+        background: url(../img/index8.jpg) 50% 90%;
+        background-size: cover;
+        margin-bottom: 8px;
+        @include PC{
+          height: 400px;
+          background: url(../img/index8.jpg) 50% 50%;
+          background-size: cover;
+        }
+        @include pad{
+          height: 800px;
+          background: url(../img/index8.jpg) 50% 50%;
+          background-size: cover;
+        }
+        @include mobile{
+          height: 350px;
+          background: url(../img/index8.jpg) 50% 50%;
+          background-size: cover;
+        }
+      }
+      .mask{
+        background: #000;
+        opacity: 0.6;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p{
+          color: #fff;
+          font-size: $font-size-3;
+          line-height: 36px;
+          font-weight: $font-weight-subtitle;
+        }
+      }
+      h4{
+        font-size: $font-size-3;
+        line-height: 36px;
+        font-weight: $font-weight-subtitle;
+      }
+      .design{
+        padding-bottom: 16px;
+      }
+      span{
+        color: $text-color-base;
+        text-decoration: line-through;
+        margin-left: 8px;
+      }
+    }
+  }
+  
+}
+
+.subscribe{
+  height: calc(68vh);
+  background: url('../img/index10.jpg') center center;
+  background-size: cover;
+  .container{
+    display: flex;
+    justify-content: flex-start;
+    @include pad{
+      justify-content: center;
+    }
+  }
+  .subscribeInfo{
+    margin-top: 19em;
+    @include mobile{
+      margin-top: 10em;
+    }
+  }
+  h2{
+    font-family: $font-family-ch;
+    color: $text-color-base;
+    font-size: $font-size-5;
+    line-height: 48px;
+    margin-bottom: 20px;
+  }
+  .subscribeForm{
+    width: 350px;
+    border: 2px solid $primary-color;
+    border-radius: 0px 4px 4px 0px;
+    display: flex;
+    input{
+      width: 218px;
+      padding: 16px 16px;
+      font-size: $font-size-1;
+    }
+    a{
+      width: 130px;
+      display: block;
+      background: $primary-color;
+      line-height: 56px;
+      text-align: center;
+      color: #fff;
+      font-size: $font-size-1;
+      &:hover{
+        background: $link-hover-color;
+      }
+    }
+  }
+}
+
+.footer{
+  background: $primary-color;
+  @include mobile{
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footerInfo{
+    display: flex;
+    align-items: center;
+    
+    p{
+      display: inline-block;
+      color: #fff;
+      font-size: 14px;
+      line-height: 21px;
+      margin-left: 20px;
+    }
+  }
+  .footerMenu{
+    display: flex;
+    @include mobile{
+      display: none;
+    }
+    li{
+      a{
+        display: block;
+        color: #fff;
+        padding-left: 18px;
+        padding-right: 18px;
+        font-size: $font-size-2;
+        line-height: 80px;
+        &:hover{
+          background: $link-hover-color;
+        }
+      }
+    }
+  }
+}
